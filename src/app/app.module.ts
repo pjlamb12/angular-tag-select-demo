@@ -4,11 +4,15 @@ import { AngularTagSelectModule } from 'angular-tag-select';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { PossibleTagListComponent } from './possible-tag-list/possible-tag-list.component';
+import { SelectedTagListComponent } from './selected-tag-list/selected-tag-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    PossibleTagListComponent,
+    SelectedTagListComponent
   ],
   imports: [
     BrowserModule,

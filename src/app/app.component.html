@@ -13,7 +13,7 @@
   </div>
   <div class="row">
     <div class="col">
-      <h2>Demo</h2>
+      <h2>Default Styles Demo</h2>
     </div>
   </div>
   <div class="row">
@@ -27,6 +27,25 @@
       <h5>Can't Dynamically Add Tags</h5>
       <ats-tag-select [tagsSelectedAtStart]="startingTags" [tagMapping]="tagMapping" [tagsToSelect]="possibleTags2" (selectedTagsUpdated)="tagsUpdated($event)"></ats-tag-select>
       <br />
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <h2>TemplateRef Demo</h2>
+      <p>This demo shows how you can supply custom templates to display the possible tag list and the selected tag list.
+        <a href="https://github.com/pjlamb12/angular-tag-select-demo/blob/master/src/app/app.component.html" target="_blank">
+          Check out the code
+        </a> to see specifically how it was implemented.</p>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-6">
+      <ats-tag-select-tr [tagsSelectedAtStart]="startingTags" [tagMapping]="tagMapping" [tagsToSelect]="possibleTags">
+        <ng-template let-possible="possibleTags" let-selected="selectedTags" let-fns="fns">
+          <app-selected-tag-list [selectedTags]="selected" (emitRemoveTag)="fns.toggleTag($event)"></app-selected-tag-list>
+          <app-possible-tag-list [possibleTagList]="possible" [selectedTagList]="selected" (emitSelectedTag)="fns.toggleTag($event)"></app-possible-tag-list>
+        </ng-template>
+      </ats-tag-select-tr>
     </div>
   </div>
   <div class="row">
